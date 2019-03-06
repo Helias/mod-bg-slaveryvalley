@@ -24,6 +24,7 @@ To become a contributor you just need to open some PRs at https://github.com/aze
 - If one of the two bosses die, the other boss disappear.
 - The bosses (re)spawn after 5 minutes.
 
+![SlaveryValley](images/SlaveryValley_Map.png)
 ![SlaveryValley](images/SlaveryValley.png)
 ![SlaveryValley](images/SlaveryValley_night.png)
 ![SlaveryValley](images/SlaveryValley-BG.png)

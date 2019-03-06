@@ -8,8 +8,7 @@ This module add the battleground Slavery Valley.
 
 The module is not open source, it is only for **AzerothCore contributors**, if you are a contributor request this module to @Helias on our [discord server](https://discordapp.com/invite/gkt4y2x).
 
-To become a contributor you just need to open some PRs at https://github.com/azerothcore/azerothcore-wotlk and wait that the PRs will be accepted, after you can request this module.
-
+There are many ways to [become a contributor](http://www.azerothcore.org/wiki/Contribute). You can help by sending PRs, testing PRs, improving the wiki, giving support to other users, etc... Contributing is not limited to programmers only, everyone is able to help. You too!
 
 ### How the battleground works?
 

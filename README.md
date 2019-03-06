@@ -28,6 +28,7 @@ To become a contributor you just need to open some PRs at https://github.com/aze
 ![SlaveryValley](https://raw.githubusercontent.com/azerothcore/mod-bg-slaveryvalley/master/images/SlaveryValley.png)
 ![SlaveryValley](https://raw.githubusercontent.com/azerothcore/mod-bg-slaveryvalley/master/images/SlaveryValley_night.png)
 ![SlaveryValley](https://raw.githubusercontent.com/azerothcore/mod-bg-slaveryvalley/master/images/SlaveryValley-BG.png)
+![SlaveryValley](https://raw.githubusercontent.com/azerothcore/mod-bg-slaveryvalley/master/images/LoadScreen.png)
 
 # Bosses
 ![SlaveryValley](https://raw.githubusercontent.com/azerothcore/mod-bg-slaveryvalley/master/images/Bosses.png)

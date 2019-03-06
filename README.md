@@ -24,13 +24,13 @@ To become a contributor you just need to open some PRs at https://github.com/aze
 - If one of the two bosses die, the other boss disappear.
 - The bosses (re)spawn after 5 minutes.
 
-![SlaveryValley](images/SlaveryValley_Map.png)
-![SlaveryValley](images/SlaveryValley.png)
-![SlaveryValley](images/SlaveryValley_night.png)
-![SlaveryValley](images/SlaveryValley-BG.png)
+![SlaveryValley](https://raw.githubusercontent.com/azerothcore/mod-bg-slaveryvalley/master/images/SlaveryValley_Map.png)
+![SlaveryValley](https://raw.githubusercontent.com/azerothcore/mod-bg-slaveryvalley/master/images/SlaveryValley.png)
+![SlaveryValley](https://raw.githubusercontent.com/azerothcore/mod-bg-slaveryvalley/master/images/SlaveryValley_night.png)
+![SlaveryValley](https://raw.githubusercontent.com/azerothcore/mod-bg-slaveryvalley/master/images/SlaveryValley-BG.png)
 
 # Bosses
-![SlaveryValley](images/Bosses.png)
+![SlaveryValley](https://raw.githubusercontent.com/azerothcore/mod-bg-slaveryvalley/master/images/Bosses.png)
 
 ## Requirements
 

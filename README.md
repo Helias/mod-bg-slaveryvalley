@@ -14,9 +14,10 @@ To become a contributor you just need to open some PRs at https://github.com/aze
 ### How the battleground works?
 
 - Any faction has **80 points** (as default), the goal is decrease the points of the opposite faction by killing the players or the boss.
-
 - There are three bases: **Mine, Restless Graveyard, Prison**.
 - Restless Graveyard and Mine give you the **Spirit Healer** of the base.
+- **Mine**, if taken, buffs the team with **Mine Buff**, it increases your damage by 5%.
+- **Restless Graveyard**, if taken, buffs the team with **Restless Soul Graveyard Buff**, it increases your stamina.
 - If you **kill a player** you inflict 1 point to the opposite faction, if you **take Prison** you inflict 2 points when you kill a player.
 - The base Prison has no graveyard.
 - There are two bosses one for each faction.

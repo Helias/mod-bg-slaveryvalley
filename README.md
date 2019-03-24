@@ -10,6 +10,11 @@ The module is not open source, it is only for **AzerothCore contributors**, if y
 
 There are many ways to [become a contributor](http://www.azerothcore.org/wiki/Contribute). You can help by sending PRs, testing PRs, improving the wiki, giving support to other users, etc... Contributing is not limited to programmers only, everyone is able to help. You too!
 
+In short words, you become a contributor if you make one of the followings:
+- have at least one Pull Request merged
+- test a few Pull Requests
+- write 3 new wiki pages or (1-2 big one)
+
 ### How the battleground works?
 
 - Any faction has **80 points** (as default), the goal is decrease the points of the opposite faction by killing the players or the boss.

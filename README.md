@@ -2,6 +2,8 @@
 
 # Custom Battleground Slavery Valley
 
+![SlaveryValley](https://raw.githubusercontent.com/azerothcore/mod-bg-slaveryvalley/master/icon.png)
+
 ## Description
 
 This module add the battleground Slavery Valley.
@@ -52,5 +54,6 @@ This module requires:
 
 * [Helias](https://github.com/Helias)
 * [Snoopzz](http://www.modcraft.io/index.php?topic=10882.0)
+* [Knindza](https://github.com/Knindzagxg)
 
 AzerothCore: [repository](https://github.com/azerothcore) - [website](http://azerothcore.org/) - [discord chat community](https://discord.gg/PaqQRkd)

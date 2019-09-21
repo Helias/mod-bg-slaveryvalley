@@ -55,6 +55,6 @@ This module requires:
 * [Snoopzz](http://www.modcraft.io/index.php?topic=10882.0)
 * [Helias](https://github.com/Helias)
 * [Knindza](https://github.com/Knindzagxg)
-* [Root#1633]()
+* [Root#1633](https://github.com/cristian-root)
 
 AzerothCore: [repository](https://github.com/azerothcore) - [website](http://azerothcore.org/) - [discord chat community](https://discord.gg/PaqQRkd)

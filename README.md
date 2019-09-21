@@ -10,7 +10,7 @@ This module add the battleground Slavery Valley.
 
 ### How to get this module?
 
-The module is not open source, it is only for **AzerothCore contributors**, if you are a contributor request this module to @Helias on our [discord server](https://discordapp.com/invite/gkt4y2x).  
+The module is not open source, it is only for **AzerothCore contributors**, if you are a contributor request this module to @Barbz or @Helias in our [discord server](https://discordapp.com/invite/gkt4y2x).  
 **If you are not a contributor yet, ask admins to get the contributor rank and afterward contact Helias on Discord.**
 
 There are many ways to [become a contributor](http://www.azerothcore.org/wiki/Contribute). You can help by sending PRs, testing PRs, improving the wiki, giving support to other users, etc... Contributing is not limited to programmers only, everyone is able to help. You too!

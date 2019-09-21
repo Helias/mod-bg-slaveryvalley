@@ -52,8 +52,9 @@ This module requires:
 
 ## Credits
 
-* [Helias](https://github.com/Helias)
 * [Snoopzz](http://www.modcraft.io/index.php?topic=10882.0)
+* [Helias](https://github.com/Helias)
 * [Knindza](https://github.com/Knindzagxg)
+* [Root#1633]()
 
 AzerothCore: [repository](https://github.com/azerothcore) - [website](http://azerothcore.org/) - [discord chat community](https://discord.gg/PaqQRkd)

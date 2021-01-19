@@ -10,7 +10,7 @@ This module add the battleground Slavery Valley.
 
 ### This module is free and open-source
 
-It is availabler [here!](https://gitlab.com/Helias/mod-bg-slaveryvalley).  
+It is available [here!](https://gitlab.com/Helias/mod-bg-slaveryvalley).  
 Put a star ⭐️ in the repo if you like it! If you need anything, contact @Helias in our [discord server](https://discordapp.com/invite/gkt4y2x).  
 
 ### How the battleground works?

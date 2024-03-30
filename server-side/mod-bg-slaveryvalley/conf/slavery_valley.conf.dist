@@ -1,0 +1,18 @@
+[worldserver]
+
+#
+#    InitialPoints
+#        Description: initial points
+#        Default:     80
+#
+
+InitialPoints = 80
+
+#
+#    BossEnabled
+#        Description: spawn the bosses in the battleground
+#        Default:     1  - (Enabled)
+#                     0  - (Disabled)
+
+BossEnabled = 1
+

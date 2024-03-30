@@ -49,7 +49,7 @@ Install the module step by step:
 3) Re-run cmake and launch a clean build of AzerothCore.
 ```
 
-The client data files (dbc, maps etc.) to load the battleground server-side are in [server-data.zip](https://gitlab.com/Helias/mod-bg-slaveryvalley/-/raw/master/server-data.zip)
+The client data files (dbc, maps etc.) to load the battleground server-side are in [server-data.zip](https://github.com/Helias/mod-bg-slaveryvalley/releases/download/1.0/server-data.zip)
 
 Downloaded the files put them in your server/data/ folder, you need to overwrite the old dbc files and just add the others.
 

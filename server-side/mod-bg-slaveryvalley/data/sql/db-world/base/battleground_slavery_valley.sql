@@ -23,10 +23,17 @@ INSERT INTO `battleground_template` (`ID`, `MinPlayersPerTeam`, `MaxPlayersPerTe
 
 -- creature_template
 DELETE FROM `creature_template` WHERE `entry` IN (129999, 130000, 130001);
-INSERT INTO `creature_template` (`entry`, `difficulty_entry_1`, `difficulty_entry_2`, `difficulty_entry_3`, `KillCredit1`, `KillCredit2`, `modelid1`, `modelid2`, `modelid3`, `modelid4`, `name`, `subname`, `IconName`, `gossip_menu_id`, `minlevel`, `maxlevel`, `exp`, `faction`, `npcflag`, `speed_walk`, `speed_run`, `scale`, `rank`, `dmgschool`, `DamageModifier`, `BaseAttackTime`, `RangeAttackTime`, `BaseVariance`, `RangeVariance`, `unit_class`, `unit_flags`, `unit_flags2`, `dynamicflags`, `family`, `trainer_type`, `trainer_spell`, `trainer_class`, `trainer_race`, `type`, `type_flags`, `lootid`, `pickpocketloot`, `skinloot`, `PetSpellDataId`, `VehicleId`, `mingold`, `maxgold`, `AIName`, `MovementType`, `HoverHeight`, `HealthModifier`, `ManaModifier`, `ArmorModifier`, `RacialLeader`, `movementId`, `RegenHealth`, `mechanic_immune_mask`, `spell_school_immune_mask`, `flags_extra`, `ScriptName`, `VerifiedBuild`) VALUES
-(129999, 0, 0, 0, 0, 0, 11353, 0, 0, 0, 'Developer Snoopzz', NULL, NULL, 5, 1, 1, 0, 35, 1, 1, 1, 1, 0, 0, 1, 2000, 2000, 1, 1, 8, 32768, 2048, 0, 0, 0, 0, 0, 0, 7, 4096, 0, 0, 0, 0, 0, 0, 0, '', 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, '', 12340),
-(130000, 0, 0, 0, 0, 0, 22054, 0, 0, 0, 'Manakos', 'Slave Driver', '', 0, 71, 80, 0, 84, 1, 1, 1.14286, 1.5, 3, 0, 35, 2500, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 'SmartAI', 0, 1, 50, 50, 1, 0, 0, 1, 208607, 0, 0, '', 12340),
-(130001, 0, 0, 0, 0, 0, 22147, 0, 0, 0, 'Garog', 'Slave Driver', '', 0, 71, 80, 0, 83, 1, 1, 1.14286, 1.5, 3, 0, 35, 2500, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 'SmartAI', 0, 1, 50, 50, 1, 0, 0, 1, 208607, 0, 0, '', 12340);
+INSERT INTO `creature_template` (`entry`, `difficulty_entry_1`, `difficulty_entry_2`, `difficulty_entry_3`, `KillCredit1`, `KillCredit2`, `name`, `subname`, `IconName`, `gossip_menu_id`, `minlevel`, `maxlevel`, `exp`, `faction`, `npcflag`, `speed_walk`, `speed_run`, `scale`, `rank`, `dmgschool`, `DamageModifier`, `BaseAttackTime`, `RangeAttackTime`, `BaseVariance`, `RangeVariance`, `unit_class`, `unit_flags`, `unit_flags2`, `dynamicflags`, `family`, `trainer_type`, `trainer_spell`, `trainer_class`, `trainer_race`, `type`, `type_flags`, `lootid`, `pickpocketloot`, `skinloot`, `PetSpellDataId`, `VehicleId`, `mingold`, `maxgold`, `AIName`, `MovementType`, `HoverHeight`, `HealthModifier`, `ManaModifier`, `ArmorModifier`, `RacialLeader`, `movementId`, `RegenHealth`, `mechanic_immune_mask`, `spell_school_immune_mask`, `flags_extra`, `ScriptName`, `VerifiedBuild`) VALUES
+(129999, 0, 0, 0, 0, 0, 'Developer Snoopzz', NULL, NULL, 5, 1, 1, 0, 35, 1, 1, 1, 1, 0, 0, 1, 2000, 2000, 1, 1, 8, 32768, 2048, 0, 0, 0, 0, 0, 0, 7, 4096, 0, 0, 0, 0, 0, 0, 0, '', 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, '', 12340),
+(130000, 0, 0, 0, 0, 0, 'Manakos', 'Slave Driver', '', 0, 71, 80, 0, 84, 1, 1, 1.14286, 1.5, 3, 0, 35, 2500, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 'SmartAI', 0, 1, 50, 50, 1, 0, 0, 1, 208607, 0, 0, '', 12340),
+(130001, 0, 0, 0, 0, 0, 'Garog', 'Slave Driver', '', 0, 71, 80, 0, 83, 1, 1, 1.14286, 1.5, 3, 0, 35, 2500, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 'SmartAI', 0, 1, 50, 50, 1, 0, 0, 1, 208607, 0, 0, '', 12340);
+
+--Creature_template_model
+DELETE FROM `creature_template_model` WHERE `CreatureID` IN (129999, 130000, 130001);
+INSERT INTO `creature_template_model` (`CreatureID`, `Idx`, `CreatureDisplayID`, `DisplayScale`, `Probability`, `VerifiedBuild`) VALUES
+	(129999, 0, 11353, 1, 1, 12340),
+  (130000, 0, 22054, 1, 1, 12340),
+  (130001, 0, 22147, 1, 1, 12340);
 
 -- creatture_template_movement
 DELETE FROM `creature_template_movement` WHERE `CreatureId` IN (129999, 130000, 130001);

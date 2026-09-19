@@ -335,7 +335,7 @@ class BattlegroundSV : public Battleground
         GraveyardStruct const* GetClosestGraveyard(Player* player);
 
         /* Scorekeeping */
-        void FillInitialWorldStates(WorldPacket& data);
+        void FillInitialWorldStates(WorldPackets::WorldState::InitWorldStates& packet);
 
         void HandlePlayerResurrect(Player* player);
 
@@ -357,6 +357,7 @@ class BattlegroundSV : public Battleground
         void BG_SV_HandleContestedNodes(BG_SV_NodePoint* node);
         void BG_SV_StartRoot(Player* player);
         void BG_SV_RemoveRoot(Player* player);
+        void SendMessage2ToAll(uint32 entry, ChatMsg type, Player const* source, uint32 arg1 = 0, uint32 arg2 = 0);
 
         bool HordeCaptured;
         bool AllianceCaptured;

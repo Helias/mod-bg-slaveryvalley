@@ -1,6 +1,7 @@
 #include "BattlegroundSV.h"
 #include "Battleground.h"
 #include "BattlegroundMgr.h"
+#include "Chat.h"
 #include "GameGraveyard.h"
 #include "GameObject.h"
 #include "Language.h"
@@ -245,15 +246,15 @@ void BattlegroundSV::HandleAreaTrigger(Player * /* player */, uint32 /* trigger 
 		return;
 }
 
-void BattlegroundSV::FillInitialWorldStates(WorldPacket &data)
+void BattlegroundSV::FillInitialWorldStates(WorldPackets::WorldState::InitWorldStates& packet)
 {
 	// set score
-	data << uint32(BG_SV_WS_ALLIANCE_SCORE) << uint32(TeamScore[TEAM_ALLIANCE]);
-	data << uint32(BG_SV_WS_HORDE_SCORE) << uint32(TeamScore[TEAM_HORDE]);
+	packet.Worldstates.emplace_back(BG_SV_WS_ALLIANCE_SCORE, TeamScore[TEAM_ALLIANCE]);
+	packet.Worldstates.emplace_back(BG_SV_WS_HORDE_SCORE, TeamScore[TEAM_HORDE]);
 
 	// set world states on the map
 	for (uint8 i = 0; i < BG_SV_MAX_NODE_TYPES; ++i)
-		data << uint32(nodePoint[i].worldStates[nodePoint[i].nodeState]) << uint32(1);
+		packet.Worldstates.emplace_back(nodePoint[i].worldStates[nodePoint[i].nodeState], 1);
 }
 
 bool BattlegroundSV::SetupBattleground()
@@ -296,6 +297,24 @@ bool BattlegroundSV::SetupBattleground()
 	}
 
 	return true;
+}
+
+// acore_string entries use printf-style %s placeholders, filled with other acore_string entries
+void BattlegroundSV::SendMessage2ToAll(uint32 entry, ChatMsg type, Player const* source, uint32 arg1, uint32 arg2)
+{
+	for (auto const& [guid, player] : GetPlayers())
+	{
+		LocaleConstant locale = player->GetSession()->GetSessionDbLocaleIndex();
+		std::string arg1Str = arg1 ? sObjectMgr->GetAcoreString(arg1, locale) : "";
+		std::string arg2Str = arg2 ? sObjectMgr->GetAcoreString(arg2, locale) : "";
+
+		char text[2048];
+		snprintf(text, sizeof(text), sObjectMgr->GetAcoreString(entry, locale).c_str(), arg1Str.c_str(), arg2Str.c_str());
+
+		WorldPacket data;
+		ChatHandler::BuildChatPacket(data, type, LANG_UNIVERSAL, source, source, text);
+		player->SendDirectMessage(&data);
+	}
 }
 
 void BattlegroundSV::SpawnBoss()
@@ -478,14 +497,14 @@ void BattlegroundSV::EventPlayerClickedOnFlag(Player *player, GameObject *target
 
 				if (nodePoint[i].nodeType != NODE_TYPE_PRISON)
 				{
-					RelocateDeadPlayers(BgCreatures[BG_SV_NPC_SPIRIT_GUIDE_1 + nodePoint[i].nodeType - 2]);
+					RelocateDeadPlayers(BgCreatures[BG_SV_NPC_SPIRIT_GUIDE_1 + uint32(nodePoint[i].nodeType) - 2]);
 				}
 
 				// if we are here means that the point has been lost, or it is the first capture
 
 				if (nodePoint[i].nodeType != NODE_TYPE_PRISON)
-					if (BgCreatures[BG_SV_NPC_SPIRIT_GUIDE_1 + (nodePoint[i].nodeType) - 2])
-						DelCreature(BG_SV_NPC_SPIRIT_GUIDE_1 + (nodePoint[i].nodeType) - 2);
+					if (BgCreatures[BG_SV_NPC_SPIRIT_GUIDE_1 + uint32(nodePoint[i].nodeType) - 2])
+						DelCreature(BG_SV_NPC_SPIRIT_GUIDE_1 + uint32(nodePoint[i].nodeType) - 2);
 
 				SendMessage2ToAll(LANG_BG_SV_ASSAULTED, teamId == TEAM_ALLIANCE ? CHAT_MSG_BG_SYSTEM_ALLIANCE : CHAT_MSG_BG_SYSTEM_HORDE, player, nodePoint[i].string);
 				PlaySoundToAll(nodePoint[i].faction == TEAM_ALLIANCE ? BG_SV_SOUND_NODE_ASSAULTED_ALLIANCE : BG_SV_SOUND_NODE_ASSAULTED_HORDE);
@@ -601,7 +620,7 @@ void BattlegroundSV::BG_SV_HandleCapturedNodes(BG_SV_NodePoint *node, bool /* re
 {
 	if (node->nodeType != NODE_TYPE_FIX && node->nodeType != NODE_TYPE_PRISON)
 	{
-		if (!AddSpiritGuide(BG_SV_NPC_SPIRIT_GUIDE_1 + node->nodeType - 2, BG_SV_SpiritGuidePos[node->nodeType].m_positionX, BG_SV_SpiritGuidePos[node->nodeType].m_positionY, BG_SV_SpiritGuidePos[node->nodeType].m_positionZ, BG_SV_SpiritGuidePos[node->nodeType].m_orientation, node->faction))
+		if (!AddSpiritGuide(BG_SV_NPC_SPIRIT_GUIDE_1 + uint32(node->nodeType) - 2, BG_SV_SpiritGuidePos[node->nodeType].m_positionX, BG_SV_SpiritGuidePos[node->nodeType].m_positionY, BG_SV_SpiritGuidePos[node->nodeType].m_positionZ, BG_SV_SpiritGuidePos[node->nodeType].m_orientation, node->faction))
 			LOG_INFO("module", "Slavery Valley Failed to spawn spirit guide! point: {}, team: {}, ", node->nodeType, node->faction);
 	}
 
@@ -699,7 +718,7 @@ GraveyardStruct const *BattlegroundSV::GetClosestGraveyard(Player *player)
 		if (nodePoint[i].captured == true && nodePoint[i].faction == teamIndex)
 			nodes.push_back(i);
 
-	GraveyardStruct const *entry = sGraveyard->GetGraveyard(BG_SV_GraveyardIds[teamIndex + BG_SV_MAX_NODE_TYPES]);
+	GraveyardStruct const *entry = sGraveyard->GetGraveyard(BG_SV_GraveyardIds[teamIndex + uint32(BG_SV_MAX_NODE_TYPES)]);
 	GraveyardStruct const *nearestEntry = entry;
 
 	// If so, select the closest node to place ghost on

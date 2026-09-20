@@ -11,3 +11,4 @@ jobs:
     with:
       module_repo: ${{ github.event.repository.name }}
       module_path: server-side/mod-bg-slaveryvalley
+      module_data: https://github.com/Helias/mod-bg-slaveryvalley/releases/download/1.0/server-data.zip
